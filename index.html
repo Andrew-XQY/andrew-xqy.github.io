@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Name</title>
+  <style>
+    /* --- Page setup --- */
+    body {
+      background-color: #202124;
+      color: #e8eaed;
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 1rem;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* --- Avatar --- */
+    .avatar {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    /* --- Intro --- */
+    .intro {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* --- Social icons --- */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .social-icons a {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #3c4043;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+      filter: invert(1); /* white icons */
+    }
+
+    /* --- Sections --- */
+    section {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      border-bottom: 1px solid #5f6368;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    /* --- Timetable --- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 0.5rem;
+      border: 1px solid #5f6368;
+    }
+    th {
+      background: #3c4043;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Avatar -->
+    <img src="avatar.jpg" alt="Your Name" class="avatar">
+
+    <!-- Short intro -->
+    <p class="intro">
+      Hi, I’m Your Name—a PhD student in ML & Physics at the Cockcroft Institute / University of Liverpool. Welcome to my corner of the web!
+    </p>
+
+    <!-- Social links (place your icons in the same folder) -->
+    <div class="social-icons">
+      <a href="https://twitter.com/yourhandle" title="Twitter">
+        <img src="twitter.svg" alt="Twitter">
+      </a>
+      <a href="https://github.com/your-username" title="GitHub">
+        <img src="github.svg" alt="GitHub">
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" title="LinkedIn">
+        <img src="linkedin.svg" alt="LinkedIn">
+      </a>
+    </div>
+
+    <!-- Background as timetable -->
+    <section id="background">
+      <h2>Background</h2>
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Institution</th>
+          <th>Role</th>
+        </tr>
+        <tr>
+          <td>2021–2025</td>
+          <td>University of Liverpool</td>
+          <td>PhD Student</td>
+        </tr>
+        <!-- add more rows as needed -->
+      </table>
+    </section>
+
+    <!-- Recent activities -->
+    <section id="activities">
+      <h2>Recent Activities</h2>
+      <ul>
+        <li>Attended ML4Physics workshop, May 2025</li>
+        <li>Published blog post on U-Net image translation, Apr 2025</li>
+        <!-- … -->
+      </ul>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul>
+        <li>Xu, A. et al. “Reconstructing Beam Distributions with GANs.” *Phys. Rev. Accel. Beams*, 2025.</li>
+        <!-- … -->
+      </ul>
+    </section>
+
+    <!-- Side projects -->
+    <section id="projects">
+      <h2>Side Projects</h2>
+      <ul>
+        <li>Open-source ML toolkit for beam diagnostics (GitHub)</li>
+        <li>Interactive Jupyter demo: fiber-optics modeling</li>
+        <!-- … -->
+      </ul>
+    </section>
+
+    <footer>
+      <p>© 2025 Your Name · <a href="https://github.com/your-username" style="color:#8ab4f8">GitHub</a></p>
+    </footer>
+  </div>
+</body>
+</html>
