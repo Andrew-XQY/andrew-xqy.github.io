@@ -63,7 +63,7 @@
       padding: 1rem;
       border-radius: 8px;
     }
-    section:nth-of-type(1) { background-color: #292a2d; }
+    section:nth-of-type(1) { background-color: transparent; padding: 0; }
     section:nth-of-type(2) { background-color: #2f3033; }
     section:nth-of-type(3) { background-color: #353638; }
     section:nth-of-type(4) { background-color: #3b3c3f; }
@@ -75,23 +75,63 @@
       margin-bottom: 0.8rem;
       font-size: 1.3rem;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      margin-left: 20px;
+      border-left: 2px solid #5f6368;
+      padding-left: 20px;
     }
-    th, td {
-      padding: 0.5rem;
-      border: 1px solid #5f6368;
+    .timeline-entry {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      position: relative;
     }
-    th {
-      background: #3c4043;
+    .timeline-entry::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background-color: #8ab4f8;
+      border-radius: 50%;
+      position: absolute;
+      left: -27px;
+      top: 8px;
+    }
+    .timeline-img {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      margin-right: 1rem;
+    }
+    .timeline-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .timeline-year {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 0.3rem;
+    }
+    .project-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .project-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      margin-right: 1rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="images/avatar.jpg" alt="Qiyuan Xu" width="150" height="150" style="border-radius:12px; margin-bottom:1rem;">
-    <p style="font-family:sans-serif; font-size:1.1rem; margin-bottom:1rem;">
+    <img src="images/avatar.jpg" alt="Qiyuan Xu" width="150" height="150" class="avatar">
+    <p class="intro">
       Hi, I’m Andrew Xu—a PhD student in ML &amp; Physics at the CERN / Cockcroft Institute / University of Liverpool. Welcome to my corner of the web!
     </p>
     <div class="social-icons">
@@ -115,19 +155,36 @@
     <div class="fade-line"></div>
 
     <section id="background">
-      <h2>Background</h2>
-      <table>
-        <tr>
-          <th>Year</th>
-          <th>Institution</th>
-          <th>Role</th>
-        </tr>
-        <tr>
-          <td>2021–2025</td>
-          <td>University of Liverpool</td>
-          <td>PhD Student</td>
-        </tr>
-      </table>
+      <div class="timeline">
+        <div class="timeline-entry">
+          <img src="images/cern.png" alt="CERN" class="timeline-img">
+          <div class="timeline-content">
+            <div>Project Associate, Beam Instrumentation Group, CERN</div>
+            <div class="timeline-year">2025</div>
+          </div>
+        </div>
+        <div class="timeline-entry">
+          <img src="images/liverpool.png" alt="Liverpool" class="timeline-img">
+          <div class="timeline-content">
+            <div>PhD in Physics and Machine Learning, University of Liverpool</div>
+            <div class="timeline-year">2021–2025</div>
+          </div>
+        </div>
+        <div class="timeline-entry">
+          <img src="images/edin.png" alt="Edinburgh" class="timeline-img">
+          <div class="timeline-content">
+            <div>MSc in Artificial Intelligence, School of Informatics, University of Edinburgh</div>
+            <div class="timeline-year">2020</div>
+          </div>
+        </div>
+        <div class="timeline-entry">
+          <img src="images/xjtlu.jpeg" alt="XJTLU" class="timeline-img">
+          <div class="timeline-content">
+            <div>BEng in Electrical Engineering, Xi'an Jiaotong-Liverpool University</div>
+            <div class="timeline-year">2013–2017</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="featured">
@@ -146,9 +203,14 @@
 
     <section id="projects">
       <h2>Projects</h2>
-      <ul>
-        <li><a href="https://github.com/Andrew-XQY/XFlow" style="color:#8ab4f8">XFlow</a> – minimal, modular machine-learning framework for scientific workflows</li>
-      </ul>
+      <div class="project-item">
+        <img src="https://github.com/Andrew-XQY/XFlow/blob/8d4353987c931b0edb51a1835a10a96d9a9f8c11/images/logo.png?raw=true" alt="XFlow Logo" class="project-logo">
+        <div><a href="https://github.com/Andrew-XQY/XFlow" style="color:#8ab4f8">XFlow</a> – minimal, modular machine-learning framework for scientific workflows</div>
+      </div>
+      <div class="project-item">
+        <img src="https://github.com/Andrew-XQY/OptiBeam/assets/26278255/59e6e340-e3c1-4b4b-8762-5f73c1ca44bd" alt="OptiBeam Logo" class="project-logo">
+        <div><a href="https://github.com/Andrew-XQY/OptiBeam" style="color:#8ab4f8">OptiBeam</a> – my PhD experiment hardware control library and automation framework</div>
+      </div>
     </section>
 
     <section id="misc">
