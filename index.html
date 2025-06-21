@@ -28,6 +28,7 @@
     .intro {
       font-size: 1.1rem;
       margin-bottom: 1rem;
+      text-align: center;
     }
     .social-icons {
       display: flex;
@@ -126,13 +127,48 @@
       object-fit: contain;
       margin-right: 1rem;
     }
+
+    /* News: 2-column grid + bordered cards */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .feature-card {
+      display: flex;
+      background: #2a2b2e;      /* slightly lighter than #202124 */
+      border: 1px solid #5f6368; /* thin, smooth corner border */
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .1s;
+    }
+    .feature-card:hover {
+      transform: translateY(-2px);
+    }
+    .feature-card img {
+      width: 96px;
+      height: 96px;
+      object-fit: cover;
+    }
+    .feature-card .content {
+      padding: 0.75rem;
+      display: flex;
+      align-items: center;
+    }
+    .feature-card .content p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <img src="images/avatar.jpg" alt="Qiyuan Xu" width="150" height="150" class="avatar">
     <p class="intro">
-      I'm interested in applying state-of-the-art AI techniques to solve computer vision problems in physics. 📷🧠⚛️
+      Hi, I'm Qiyuan (Andrew) Xu — I use AI/ML to solve computer vision problems in physics
     </p>
     <div class="social-icons">
       <a href="https://github.com/Andrew-XQY" title="GitHub">
@@ -153,7 +189,6 @@
     </div>
 
     <div class="fade-line"></div>
-
     <section id="background">
       <div class="timeline">
         <div class="timeline-entry">
@@ -198,12 +233,41 @@
 
       </div>
     </section>
+    
+    <section id="news">
+      <h2>News</h2>
+      <div class="features-grid">
+        <a href="https://example.com/news1" class="feature-card">
+          <img src="images/news/25_IBIC.png" alt="News 1">
+          <div class="content">
+            <p>Joining IBIC 2025 and working on three collaborative papers</p>
+          </div>
+        </a>
+        <a href="https://malapa.org/workshops" class="feature-card">
+          <img src="images/news/25_malapa.jpeg" alt="News 2">
+          <div class="content">
+            <p>Best Young Researcher Poster at MaLAPA'25</p>
+          </div>
+        </a>
+        <a href="https://example.com/news3" class="feature-card">
+          <img src="images/news/24_CI.jpeg" alt="News 3">
+          <div class="content">
+            <p>Best poster prize at Cockcroft Institute conference</p>
+          </div>
+        </a>
+      </div>
+    </section>
 
-    <section id="featured">
-      <h2>Featured</h2>
-      <ul>
-        <li>Preparing to attend <a href="https://ibic2025.org" style="color:#8ab4f8">IBIC&nbsp;2025, Liverpool</a> (7–11&nbsp;Sept&nbsp;2025)</li>
-      </ul>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-item">
+        <img src="images/xflow.png" alt="XFlow Logo" class="project-logo">
+        <div><a href="https://github.com/Andrew-XQY/XFlow" style="color:#8ab4f8">XFlow</a> – minimal, modular machine-learning framework for scientific workflows</div>
+      </div>
+      <div class="project-item">
+        <img src="images/optibeam.jpg" class="project-logo">
+        <div><a href="https://github.com/Andrew-XQY/OptiBeam" style="color:#8ab4f8">OptiBeam</a> – my PhD experiment hardware control library and automation framework</div>
+      </div>
     </section>
 
     <section id="publications">
@@ -213,25 +277,12 @@
       </ul>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-item">
-        <img src="https://github.com/Andrew-XQY/XFlow/blob/8d4353987c931b0edb51a1835a10a96d9a9f8c11/images/logo.png?raw=true" alt="XFlow Logo" class="project-logo">
-        <div><a href="https://github.com/Andrew-XQY/XFlow" style="color:#8ab4f8">XFlow</a> – minimal, modular machine-learning framework for scientific workflows</div>
-      </div>
-      <div class="project-item">
-        <img src="https://github.com/Andrew-XQY/OptiBeam/assets/26278255/59e6e340-e3c1-4b4b-8762-5f73c1ca44bd" alt="OptiBeam Logo" class="project-logo">
-        <div><a href="https://github.com/Andrew-XQY/OptiBeam" style="color:#8ab4f8">OptiBeam</a> – my PhD experiment hardware control library and automation framework</div>
-      </div>
-    </section>
-
     <section id="misc">
       <h2>Miscellaneous</h2>
       <ul>
         <li>More to come later.</li>
       </ul>
     </section>
-
     <footer>
       <p>© 2025 Andrew Xu · <a href="https://github.com/Andrew-XQY" style="color:#8ab4f8">GitHub</a></p>
     </footer>
