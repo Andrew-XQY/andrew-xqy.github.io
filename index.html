@@ -188,8 +188,8 @@
       50%      { transform: scale(1.5); }
     }
 
-    /* Wave on social icons once */
-    .social-icons a {
+    /* Wave on social icons once — only after images have loaded */
+    body.images-loaded .social-icons a {
       transform-origin: center center;
       animation-name: wave;
       animation-duration: 0.6s;
@@ -197,11 +197,11 @@
       animation-iteration-count: 1;
       animation-fill-mode: both;
     }
-    .social-icons a:nth-child(1) { animation-delay: 0s; }
-    .social-icons a:nth-child(2) { animation-delay: 0.1s; }
-    .social-icons a:nth-child(3) { animation-delay: 0.2s; }
-    .social-icons a:nth-child(4) { animation-delay: 0.3s; }
-    .social-icons a:nth-child(5) { animation-delay: 0.4s; }
+    body.images-loaded .social-icons a:nth-child(1) { animation-delay: 0s; }
+    body.images-loaded .social-icons a:nth-child(2) { animation-delay: 0.1s; }
+    body.images-loaded .social-icons a:nth-child(3) { animation-delay: 0.2s; }
+    body.images-loaded .social-icons a:nth-child(4) { animation-delay: 0.3s; }
+    body.images-loaded .social-icons a:nth-child(5) { animation-delay: 0.4s; }
 
     /* Only animate once images are loaded */
     body.images-loaded section {
