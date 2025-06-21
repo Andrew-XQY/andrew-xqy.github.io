@@ -224,6 +224,29 @@
     .social-icons a:hover {
       background-color: rgba(255, 255, 255, 0.2);
     }
+
+    /* Publication entries */
+    .publication {
+      border-left: 2px solid #5f6368;
+      font-size: 0.95rem;     
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .pub-title {
+      display: block;
+      text-decoration: none;
+      color: #e8eaed;
+      margin-bottom: 0.25rem;
+    }
+    .pub-title strong {
+      font-weight: bold;
+    }
+    .pub-meta {
+      display: block;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
   </style>
 </head>
 <body>
@@ -340,9 +363,15 @@
 
     <section id="publications">
       <h2>Publications</h2>
-      <ul>
-        <li>Q. Xu, A. Hill, H.&nbsp;D. Zhang, C.&nbsp;P. Welsch, F. Roncarolo, and G. Trad, “Estimation of beam transverse parameters through a multimode fiber using deep learning,” in <em>Proc.&nbsp;IBIC&nbsp;2024</em>, pp.&nbsp;170–173, JACoW Publishing, Geneva, 2024. <a href="https://doi.org/10.18429/JACoW-IBIC2024-TUP54" style="color:#8ab4f8">doi:10.18429/JACoW-IBIC2024-TUP54</a></li>
-      </ul>
+      <div class="publication">
+        <a href="https://doi.org/10.18429/JACoW-IBIC2024-TUP54" class="pub-title">
+          <strong>Estimation of beam transverse parameters through a multimode fiber using deep learning</strong>
+        </a>
+        <span class="pub-meta">
+          Q. Xu, A. Hill, H. D. Zhang, C. P. Welsch, F. Roncarolo & G. Trad, <em>IBIC 2024</em>
+        </span>
+      </div>
+      <!-- repeat .publication blocks for each paper -->
     </section>
 
     <section id="misc">
