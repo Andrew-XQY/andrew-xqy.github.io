@@ -47,6 +47,8 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
+      transition: transform 0.2s ease-in-out,
+                  background-color 0.2s ease-in-out;
     }
     .social-icons img {
       width: 24px;
@@ -63,6 +65,7 @@
       margin-bottom: 2rem;
       padding: 1rem;
       border-radius: 8px;
+      opacity: 0;
     }
     section:nth-of-type(1) { background-color: transparent; padding: 0; }
     section:nth-of-type(2) { background-color: #2f3033; }
@@ -90,6 +93,7 @@
       align-items: flex-start;
       margin-bottom: 2rem;
       position: relative;
+      opacity: 0;
     }
     .timeline-entry::before {
       content: "";
@@ -127,8 +131,6 @@
       object-fit: contain;
       margin-right: 1rem;
     }
-
-    /* News: 2-column grid + bordered cards */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -136,16 +138,18 @@
     }
     .feature-card {
       display: flex;
-      background: #2a2b2e;      /* slightly lighter than #202124 */
-      border: 1px solid #5f6368; /* thin, smooth corner border */
+      background: #2a2b2e;
+      border: 1px solid #5f6368;
       border-radius: 8px;
       overflow: hidden;
       text-decoration: none;
       color: inherit;
-      transition: transform .1s;
+      transition: transform 0.2s ease-in-out,
+                  background-color 0.2s ease-in-out;
     }
     .feature-card:hover {
       transform: translateY(-2px);
+      background-color: rgba(255, 255, 255, 0.1);
     }
     .feature-card img {
       width: 96px;
@@ -162,12 +166,14 @@
       font-size: 0.95rem;
       color: #ccc;
     }
-  @media (max-width: 600px) {
-    .features-grid {
-      grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
     }
-  }
-  @keyframes flyUp {
+
+    /* Keyframes */
+    @keyframes flyUp {
       from {
         opacity: 0;
         transform: translateY(20px);
@@ -177,75 +183,43 @@
         transform: translateY(0);
       }
     }
+    @keyframes wave {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.5); }
+    }
 
-    /* 2. Apply it to all sections */
-    section {
-      opacity: 0;
+    /* Wave on social icons once */
+    .social-icons a {
+      transform-origin: center center;
+      animation-name: wave;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+    }
+    .social-icons a:nth-child(1) { animation-delay: 0s; }
+    .social-icons a:nth-child(2) { animation-delay: 0.1s; }
+    .social-icons a:nth-child(3) { animation-delay: 0.2s; }
+    .social-icons a:nth-child(4) { animation-delay: 0.3s; }
+    .social-icons a:nth-child(5) { animation-delay: 0.4s; }
+
+    /* Only animate once images are loaded */
+    body.images-loaded section {
       animation: flyUp 0.6s ease-out forwards;
     }
-    section:nth-of-type(2) { animation-delay: 0.1s; }
-    section:nth-of-type(3) { animation-delay: 0.2s; }
-    section:nth-of-type(4) { animation-delay: 0.3s; }
-    section:nth-of-type(5) { animation-delay: 0.4s; }
-    section:nth-of-type(6) { animation-delay: 0.5s; }
+    body.images-loaded section:nth-of-type(2) { animation-delay: 0.1s; }
+    body.images-loaded section:nth-of-type(3) { animation-delay: 0.2s; }
+    body.images-loaded section:nth-of-type(4) { animation-delay: 0.3s; }
+    body.images-loaded section:nth-of-type(5) { animation-delay: 0.4s; }
+    body.images-loaded section:nth-of-type(6) { animation-delay: 0.5s; }
 
-    /* 3. And to each timeline entry inside the background section */
-    .timeline-entry {
-      opacity: 0;
+    body.images-loaded .timeline-entry {
       animation: flyUp 0.5s ease-out forwards;
     }
-    .timeline-entry:nth-child(1) { animation-delay: 0.2s; }
-    .timeline-entry:nth-child(2) { animation-delay: 0.3s; }
-    .timeline-entry:nth-child(3) { animation-delay: 0.4s; }
-    .timeline-entry:nth-child(4) { animation-delay: 0.5s; }
-
-  /* 1. Pop keyframes (same as before) */
-  @keyframes wave {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(1.5); }
-  }
-
-  /* 2. Apply a single run, and keep the final state if needed */
-  .social-icons a {
-    transform-origin: center center;
-    animation-name: wave;
-    animation-duration: 0.6s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;     /* ← run just once */
-    animation-fill-mode: both;        /* ← retain end-of-animation state */
-  }
-
-  /* 3. Stagger delays for the wave */
-  .social-icons a:nth-child(1) { animation-delay: 0s; }
-  .social-icons a:nth-child(2) { animation-delay: 0.1s; }
-  .social-icons a:nth-child(3) { animation-delay: 0.2s; }
-  .social-icons a:nth-child(4) { animation-delay: 0.3s; }
-  .social-icons a:nth-child(5) { animation-delay: 0.4s; }
-
-  /* 1. Smooth transform + background transition */
-  .social-icons a {
-    transform-origin: center center;
-    transition: transform 0.2s ease-in-out,
-                background-color 0.2s ease-in-out;
-  }
-
-  /* 2. Hover: pop + light “select” background */
-  .social-icons a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-
-  /* 1. Smooth transform + background transition for news cards */
-  .feature-card {
-    transition: transform 0.2s ease-in-out,
-                background-color 0.2s ease-in-out;
-  }
-
-  /* 2. On hover: lift up + semi-opaque white overlay */
-  .feature-card:hover {
-    transform: translateY(-2px);
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
+    body.images-loaded .timeline-entry:nth-child(1) { animation-delay: 0.2s; }
+    body.images-loaded .timeline-entry:nth-child(2) { animation-delay: 0.3s; }
+    body.images-loaded .timeline-entry:nth-child(3) { animation-delay: 0.4s; }
+    body.images-loaded .timeline-entry:nth-child(4) { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
@@ -284,7 +258,6 @@
             <div class="timeline-year">2024-2026</div>
           </div>
         </div>
-
         <div class="timeline-entry">
           <a href="https://www.liverpool.ac.uk/" target="_blank" rel="noopener noreferrer">
             <img src="images/liverpool.png" alt="Liverpool" class="timeline-img">
@@ -294,7 +267,6 @@
             <div class="timeline-year">2023–2027</div>
           </div>
         </div>
-
         <div class="timeline-entry">
           <a href="https://informatics.ed.ac.uk/" target="_blank" rel="noopener noreferrer">
             <img src="images/edin.jpeg" alt="Edinburgh" class="timeline-img">
@@ -304,7 +276,6 @@
             <div class="timeline-year">2019-2020</div>
           </div>
         </div>
-
         <div class="timeline-entry">
           <a href="https://www.xjtlu.edu.cn/en" target="_blank" rel="noopener noreferrer">
             <img src="images/xjtlu.jpeg" alt="XJTLU" class="timeline-img">
@@ -314,7 +285,6 @@
             <div class="timeline-year">2013–2017</div>
           </div>
         </div>
-
       </div>
     </section>
     
@@ -374,5 +344,12 @@
       <p>© 2025 Andrew Xu · <a href="https://github.com/Andrew-XQY" style="color:#8ab4f8">GitHub</a></p>
     </footer>
   </div>
+
+  <script>
+    // Wait for every image (and other subresources) to load
+    window.addEventListener('load', () => {
+      document.body.classList.add('images-loaded');
+    });
+  </script>
 </body>
 </html>
