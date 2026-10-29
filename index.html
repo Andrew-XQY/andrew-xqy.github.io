@@ -142,11 +142,28 @@
     section:nth-of-type(4) { background-color: #3b3c3f; }
     section:nth-of-type(5) { background-color: #424345; }
     section:nth-of-type(6) { background-color: #48494b; }
+    [hidden] { display: none !important; }
     section h2 {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
       border-bottom: 1px solid #5f6368;
       padding-bottom: 0.3rem;
       margin-bottom: 0.8rem;
       font-size: 1.3rem;
+    }
+    .section-more {
+      color: #aaa;
+      font-size: 0.8rem;
+      font-weight: 400;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .section-more:hover,
+    .section-more:focus-visible {
+      color: #e8eaed;
+      text-decoration: underline;
     }
     .timeline {
       display: flex;
@@ -420,9 +437,12 @@
       </div>
     </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <div class="publication">
+    <!-- Homepage: data-home-order="1", "2", ... selects and orders entries.
+         Omit data-home-order to show an entry only in its full list.
+         data-home-limit caps each homepage section; full lists use source order. -->
+    <section id="publications" data-home-limit="5">
+      <h2>Publications<a class="section-more" href="?view=publications" aria-label="View all publications">View all &rarr;</a></h2>
+      <div class="publication" data-home-order="1">
         <a href="https://doi.org/10.18429/JACoW-IPAC2026-WEP6024" class="pub-title">
           <strong>Localized Response Basis for Data-Efficient Transverse Beam Distribution Reconstruction Using a Multimode Fiber Relay</strong>
         </a>
@@ -431,7 +451,7 @@
           <em>IPAC 2026</em>
         </span>
       </div>
-      <div class="publication">
+      <div class="publication" data-home-order="2">
         <a href="https://doi.org/10.1103/wddb-m37l" class="pub-title">
           <strong>Development of radiation-tolerant beam imaging via multimode fiber and synthetic data-driven machine learning</strong>
         </a>
@@ -440,7 +460,7 @@
           <em>Physical Review Accelerators and Beams</em>
         </span>
       </div>
-      <div class="publication">
+      <div class="publication" data-home-order="3">
         <a href="https://doi.org/10.18429/JACoW-IBIC2025-TUPCO11" class="pub-title">
           <strong>Evaluating Machine Learning Models for Multimode-Fiber-Based Transverse Beam Profile Reconstruction</strong>
         </a>
@@ -449,7 +469,7 @@
           <em>IBIC 2025</em>
         </span>
       </div>
-      <div class="publication">
+      <div class="publication" data-home-order="4">
         <a href="https://doi.org/10.18429/JACoW-IBIC2024-TUP54" class="pub-title">
           <strong>Estimation of Beam Transverse Parameters Through a Multimode Fiber using Deep Learning</strong>
         </a>
@@ -463,9 +483,9 @@
       <!-- repeat .publication blocks for each paper -->
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-item">
+    <section id="projects" data-home-limit="5">
+      <h2>Projects<a class="section-more" href="?view=projects" aria-label="View all projects">View all &rarr;</a></h2>
+      <div class="project-item" data-home-order="1">
         <a href="https://github.com/Andrew-XQY/AuleLab">
           <img src="images/aulelab.png" alt="AuleLab Logo" class="project-logo">
         </a>
@@ -474,7 +494,7 @@
           – decoupled from OptiBeam, optimized for multi hardware control and sync, under development...
         </div>
       </div>
-      <div class="project-item">
+      <div class="project-item" data-home-order="2">
         <a href="https://github.com/Andrew-XQY/XFlow">
           <img src="images/xflow.png" alt="XFlow Logo" class="project-logo">
         </a>
@@ -483,7 +503,7 @@
           – minimal, modular machine-learning framework for scientific workflows
         </div>
       </div>
-      <div class="project-item">
+      <div class="project-item" data-home-order="3">
         <a href="https://github.com/Andrew-XQY/OptiBeam">
           <img src="images/optibeam.jpg" alt="OptiBeam Logo" class="project-logo">
         </a>
@@ -495,28 +515,28 @@
 
     </section>
 
-    <section id="news">
-      <h2>News</h2>
+    <section id="news" data-home-limit="8">
+      <h2>News<a class="section-more" href="?view=news" aria-label="View all news">View all &rarr;</a></h2>
       <div class="features-grid">
-        <a href="https://indico.jacow.org/event/113/" class="feature-card">
+        <a href="https://indico.jacow.org/event/113/" class="feature-card" data-home-order="1">
           <img src="images/news/26_IBIC.jpeg" alt="News 1">
           <div class="content">
             <p>IBIC 2026 invited talk</p>
           </div>
         </a>
-        <a href="https://www.eventbrite.co.uk/e/ai-discovery-day-driving-innovation-with-nvidia-dell-technologies-tickets-1721919530669?aff=oddtdtcreator" class="feature-card">
+        <a href="https://www.eventbrite.co.uk/e/ai-discovery-day-driving-innovation-with-nvidia-dell-technologies-tickets-1721919530669?aff=oddtdtcreator" class="feature-card" data-home-order="2">
           <img src="images/news/ai_nvidia.jpeg" alt="AI Discovery Day">
           <div class="content">
             <p>NVIDIA & Dell AI Discovery Day poster prize</p>
           </div>
         </a>
-        <a href="https://indico.cern.ch/event/1382428/" class="feature-card">
+        <a href="https://indico.cern.ch/event/1382428/" class="feature-card" data-home-order="3">
           <img src="images/news/25_malapa.jpeg" alt="News 2">
           <div class="content">
             <p>Best Young Researcher Poster at MaLAPA'25</p>
           </div>
         </a>
-        <a href="https://www.cockcroft.ac.uk/2024/11/22/ci-postgraduate-conference-2024/" class="feature-card">
+        <a href="https://www.cockcroft.ac.uk/2024/11/22/ci-postgraduate-conference-2024/" class="feature-card" data-home-order="4">
           <img src="images/news/24_CI.jpeg" alt="News 3">
           <div class="content">
             <p>Best poster prize at Cockcroft Institute conference</p>
@@ -525,13 +545,13 @@
       </div>
     </section>
     
-    <section id="misc">
-      <h2>Other</h2>
+    <section id="misc" data-home-limit="9">
+      <h2>Other<a class="section-more" href="?view=misc" aria-label="View all other">View all &rarr;</a></h2>
       <div class="video-grid">
-        <a href="https://www.youtube.com/watch?v=DLBUvDXh4FE" class="video-card">
+        <a href="https://www.youtube.com/watch?v=DLBUvDXh4FE" class="video-card" data-home-order="1">
           <img src="images/other/1.jpg" alt="Video 1">
         </a>
-        <a href="https://www.youtube.com/watch?v=J0bNhJ17SZU" class="video-card">
+        <a href="https://www.youtube.com/watch?v=J0bNhJ17SZU" class="video-card" data-home-order="2">
           <img src="images/other/2.jpg" alt="Video 2">
         </a>
         <!-- Add more video cards as needed -->
@@ -543,6 +563,38 @@
   </div>
 
   <script>
+    const sections = [...document.querySelectorAll('section[data-home-limit]')];
+    const view = new URLSearchParams(window.location.search).get('view');
+    const activeSection = sections.find(section => section.id === view);
+
+    if (activeSection) {
+      // Keep every section in place so the existing section colours stay the same.
+      document.querySelectorAll('.container > :not(section):not(footer)').forEach(element => {
+        element.hidden = true;
+      });
+      document.querySelectorAll('section').forEach(section => {
+        section.hidden = section !== activeSection;
+      });
+      const heading = activeSection.querySelector('h2');
+      document.title = heading.firstChild.textContent.trim() + ' — Qiyuan Xu (Andrew Xu)';
+      const backLink = heading.querySelector('.section-more');
+      backLink.href = window.location.pathname + '#' + activeSection.id;
+      backLink.textContent = '← Back home';
+      backLink.setAttribute('aria-label', 'Back to home');
+    } else {
+      sections.forEach(section => {
+        const entries = [...section.querySelectorAll('.publication, .project-item, .feature-card, .video-card')];
+        const selected = entries.filter(entry => {
+          const order = Number(entry.dataset.homeOrder);
+          return Number.isInteger(order) && order > 0;
+        }).sort((a, b) => Number(a.dataset.homeOrder) - Number(b.dataset.homeOrder))
+          .slice(0, Number(section.dataset.homeLimit));
+
+        entries.forEach(entry => { entry.hidden = !selected.includes(entry); });
+        selected.forEach(entry => { entry.parentElement.append(entry); });
+      });
+    }
+
     // Wait for every image (and other subresources) to load
     window.addEventListener('load', () => {
       document.body.classList.add('images-loaded');
