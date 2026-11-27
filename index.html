@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Qiyuan (Andrew) Xu — Machine Learning & Physics</title>
+  <title>Qiyuan Xu | Machine Learning for Physics</title>
 
   <!-- --- SEO additions (safe, non-visual) --- -->
-  <meta name="description" content="PhD Researcher in Machine Learning and Physics at the University of Liverpool and CERN — optical sensing, synthetic data, and experimental systems.">
+  <meta name="description" content="University of Liverpool PhD researcher using machine learning and multimode optical fibre to reconstruct beam images at CERN’s CLEAR facility.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://qiyuanxu.net/">
   <meta name="author" content="Qiyuan Xu">
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Qiyuan Xu (Andrew Xu) — Personal Website">
-  <meta property="og:description" content="PhD Researcher in Machine Learning and Physics · University of Liverpool · CERN">
+  <meta property="og:title" content="Qiyuan Xu | Machine Learning for Physics">
+  <meta property="og:description" content="University of Liverpool PhD researcher using machine learning and multimode optical fibre to reconstruct beam images at CERN’s CLEAR facility.">
   <meta property="og:url" content="https://qiyuanxu.net/">
   <meta property="og:image" content="https://qiyuanxu.net/images/avatar.jpg">
-  <meta property="og:image:alt" content="Portrait of Qiyuan (Andrew) Xu">
-  <meta property="og:site_name" content="Qiyuan Xu (Andrew Xu)">
+  <meta property="og:image:alt" content="Portrait of Qiyuan Xu">
+  <meta property="og:site_name" content="Qiyuan Xu">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Qiyuan Xu (Andrew Xu) — Personal Website">
-  <meta name="twitter:description" content="PhD Researcher in Machine Learning and Physics · University of Liverpool · CERN">
+  <meta name="twitter:title" content="Qiyuan Xu | Machine Learning for Physics">
+  <meta name="twitter:description" content="University of Liverpool PhD researcher using machine learning and multimode optical fibre to reconstruct beam images at CERN’s CLEAR facility.">
   <meta name="twitter:image" content="https://qiyuanxu.net/images/avatar.jpg">
 
   <!-- Optional: place your Search Console token here later -->
@@ -34,15 +34,15 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "dateModified": "2026-11-19",
+    "dateModified": "2026-11-25",
     "mainEntity": {
       "@type": "Person",
       "name": "Qiyuan Xu",
       "alternateName": ["Andrew Xu", "Q. Xu"],
       "url": "https://qiyuanxu.net/",
       "image": "https://qiyuanxu.net/images/avatar.jpg",
-      "jobTitle": "PhD Researcher in Machine Learning and Physics",
-      "description": "PhD researcher working on machine learning for physical systems: computer vision, synthetic data, sim-to-real learning.",
+      "jobTitle": "Physics PhD Researcher",
+      "description": "University of Liverpool PhD researcher using machine learning and multimode optical fibre to reconstruct beam images at CERN’s CLEAR facility.",
       "affiliation": [
         {"@type": "Organization", "name": "University of Liverpool"},
         {"@type": "Organization", "name": "CERN"}
@@ -56,7 +56,7 @@
         "https://scholar.google.com/citations?user=qqXHlJoAAAAJ",
         "https://www.linkedin.com/in/qiyuan-xu-129b9196/",
         "https://x.com/AndrewXu95",
-        "mailto:qiyuanxu95@gmail.com"
+        "https://orcid.org/0009-0001-4288-8082"
       ]
     }
   }
@@ -88,11 +88,6 @@
       font-size: 1.5rem;
       font-weight: 600;
       margin: 0 0 0.25rem;
-    }
-    .alt-name {
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: #aaa;
     }
     .intro {
       font-size: 1.1rem;
@@ -372,10 +367,13 @@
 </head>
 <body>
   <div class="container">
-    <img src="images/avatar.jpg" alt="Qiyuan Xu (Andrew Xu)" width="150" height="150" class="avatar">
-    <h1 class="name">Qiyuan Xu <span class="alt-name">(Andrew Xu)</span></h1>
+    <img src="images/avatar.jpg" alt="Qiyuan Xu" width="150" height="150" class="avatar">
+    <h1 class="name">Qiyuan Xu</h1>
     <p class="intro">
-      I work on machine learning for physical systems, with a focus on computer vision, synthetic data, and sim-to-real learning.
+      I’m a physics PhD researcher at the University of Liverpool and a project associate in CERN’s Beam Instrumentation Group.
+      At CERN’s CLEAR facility, I use machine learning and multimode optical fibre to reconstruct particle beam images
+      while keeping cameras away from high-radiation areas. My broader work spans computer vision, synthetic data,
+      and transferring models from simulation to real experiments.
     </p>
     <div class="social-icons">
       <a href="https://github.com/Andrew-XQY" title="GitHub">
@@ -567,7 +565,7 @@
       </div>
     </section>
     <footer>
-      <p>© 2026 Qiyuan Xu (Andrew Xu) · <a href="https://github.com/Andrew-XQY" style="color:#8ab4f8">GitHub</a></p>
+      <p>© 2026 Qiyuan Xu · <a href="https://github.com/Andrew-XQY" style="color:#8ab4f8">GitHub</a></p>
     </footer>
   </div>
 
@@ -585,7 +583,7 @@
         section.hidden = section !== activeSection;
       });
       const heading = activeSection.querySelector('h2');
-      document.title = heading.firstChild.textContent.trim() + ' — Qiyuan Xu (Andrew Xu)';
+      document.title = heading.firstChild.textContent.trim() + ' — Qiyuan Xu';
       const backLink = heading.querySelector('.section-more');
       backLink.href = window.location.pathname + '#' + activeSection.id;
       backLink.textContent = '← Back home';
